@@ -32,6 +32,7 @@ class KMeansClustering:
         self.logger_object.log(self.file_object, 'Entered the elbow_plot method of the KMeansClustering class')
         wcss=[] # initializing an empty list
         try:
+            run = Run.get_context()
             for i in range (1,11):
                 kmeans=KMeans(n_clusters=i,init='k-means++',random_state=42) # initializing the KMeans object
                 kmeans.fit(data) # fitting the data to the KMeans Algorithm
@@ -42,7 +43,7 @@ class KMeansClustering:
             plt.ylabel('WCSS')
             #plt.show()
             plt.savefig('preprocessing_data/K-Means_Elbow.PNG') # saving the elbow plot locally
-            Run.log_image('preprocessing_data/K-Means_Elbow.PNG') # logging the elbow plot to the run experiment
+            run.log_image('preprocessing_data/K-Means_Elbow.PNG') # logging the elbow plot to the run experiment
 
             # finding the value of the optimum cluster programmatically
             self.kn = KneeLocator(range(1, 11), wcss, curve='convex', direction='decreasing')
@@ -77,7 +78,7 @@ class KMeansClustering:
             self.save_model = self.file_op.save_model(self.kmeans, 'KMeans') # saving the KMeans model to directory
                                                                                     # passing 'Model' as the functions need three parameters
             self.register_model = Model.register(workspace=Workspace.from_config(), 
-                                  model_path = './KMeans.sav',
+                                  model_path = 'D:/Wafer Azure ML Studio/Wafer_Fault_Detection/models/KMeans/KMeans.sav',
                                   model_name = 'Kmeans_model',
                                   tags={'Training context':'Modular'},
                                   properties={'Model type':'Unsupervised','Model family':'Clustering'})

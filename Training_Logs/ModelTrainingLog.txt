@@ -157,3 +157,112 @@
 2022-04-26/09:03:07		Unsuccessful End of Training
 2022-04-26/09:23:42		Start of Training
 2022-04-26/09:24:51		Unsuccessful End of Training
+2022-04-26/10:24:02		Start of Training
+2022-04-26/10:24:12		Unsuccessful End of Training
+2022-04-26/10:24:43		Start of Training
+2022-04-26/10:24:43		Unsuccessful End of Training
+2022-04-26/10:30:03		Start of Training
+2022-04-26/10:30:03		Unsuccessful End of Training
+2022-04-26/15:17:43		Start of Training
+2022-04-26/15:17:43		Unsuccessful End of Training
+2022-04-26/15:21:46		Start of Training
+2022-04-26/15:22:20		Unsuccessful End of Training
+2022-04-26/15:40:50		Start of Training
+2022-04-26/15:40:50		Unsuccessful End of Training
+2022-04-26/15:43:01		Start of Training
+2022-04-26/15:43:01		Entered the get_data method of the Data_Getter class
+2022-04-26/15:43:11		Exception occured in get_data method of the Data_Getter class. Exception message: Missing required package "azureml-dataset-runtime", which can be installed by running: "D:\Wafer Azure ML Studio\Wafer_Fault_Detection\env\python.exe" -m pip install azureml-dataset-runtime --upgrade
+2022-04-26/15:43:11		Data Load Unsuccessful.Exited the get_data method of the Data_Getter class
+2022-04-26/15:43:11		Unsuccessful End of Training
+2022-04-26/16:07:47		Start of Training
+2022-04-26/16:07:47		Entered the get_data method of the Data_Getter class
+2022-04-26/16:08:30		Data Load Successful.Exited the get_data method of the Data_Getter class
+2022-04-26/16:08:30		Entered the remove_columns method of the Preprocessor class
+2022-04-26/16:08:30		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2022-04-26/16:08:30		Entered the separate_label_feature method of the Preprocessor class
+2022-04-26/16:08:30		Label Separation Successful. Exited the separate_label_feature method of the Preprocessor class
+2022-04-26/16:08:30		Entered the is_null_present method of the Preprocessor class
+2022-04-26/16:08:30		Exception occured in is_null_present method of the Preprocessor class. Exception message:  [Errno 2] No such file or directory: 'preprocessing_data/null_values.csv'
+2022-04-26/16:08:30		Finding missing values failed. Exited the is_null_present method of the Preprocessor class
+2022-04-26/16:08:30		Unsuccessful End of Training
+2022-04-26/17:33:41		Start of Training
+2022-04-26/17:33:41		Entered the get_data method of the Data_Getter class
+2022-04-26/17:34:34		Data Load Successful.Exited the get_data method of the Data_Getter class
+2022-04-26/17:34:34		Entered the remove_columns method of the Preprocessor class
+2022-04-26/17:34:34		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2022-04-26/17:34:34		Entered the separate_label_feature method of the Preprocessor class
+2022-04-26/17:34:34		Label Separation Successful. Exited the separate_label_feature method of the Preprocessor class
+2022-04-26/17:34:34		Entered the is_null_present method of the Preprocessor class
+2022-04-26/17:34:34		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2022-04-26/17:34:34		Entered the impute_missing_values method of the Preprocessor class
+2022-04-26/17:34:45		Imputing missing values Successful. Exited the impute_missing_values method of the Preprocessor class
+2022-04-26/17:34:45		Entered the get_columns_with_zero_std_deviation method of the Preprocessor class
+2022-04-26/17:34:46		Column search for Standard Deviation of Zero Successful. Exited the get_columns_with_zero_std_deviation method of the Preprocessor class
+2022-04-26/17:34:46		Entered the remove_columns method of the Preprocessor class
+2022-04-26/17:34:46		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2022-04-26/17:34:46		Entered the elbow_plot method of the KMeansClustering class
+2022-04-26/17:34:57		Exception occured in elbow_plot method of the KMeansClustering class. Exception message:  'str' object has no attribute '_container'
+2022-04-26/17:34:57		Finding the number of clusters failed. Exited the elbow_plot method of the KMeansClustering class
+2022-04-26/17:34:57		Unsuccessful End of Training
+2022-04-26/17:45:08		Start of Training
+2022-04-26/17:45:08		Entered the get_data method of the Data_Getter class
+2022-04-26/17:45:40		Data Load Successful.Exited the get_data method of the Data_Getter class
+2022-04-26/17:45:40		Entered the remove_columns method of the Preprocessor class
+2022-04-26/17:45:40		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2022-04-26/17:45:40		Entered the separate_label_feature method of the Preprocessor class
+2022-04-26/17:45:40		Label Separation Successful. Exited the separate_label_feature method of the Preprocessor class
+2022-04-26/17:45:40		Entered the is_null_present method of the Preprocessor class
+2022-04-26/17:45:40		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2022-04-26/17:45:40		Entered the impute_missing_values method of the Preprocessor class
+2022-04-26/17:46:00		Imputing missing values Successful. Exited the impute_missing_values method of the Preprocessor class
+2022-04-26/17:46:00		Entered the get_columns_with_zero_std_deviation method of the Preprocessor class
+2022-04-26/17:46:02		Column search for Standard Deviation of Zero Successful. Exited the get_columns_with_zero_std_deviation method of the Preprocessor class
+2022-04-26/17:46:02		Entered the remove_columns method of the Preprocessor class
+2022-04-26/17:46:02		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2022-04-26/17:46:02		Entered the elbow_plot method of the KMeansClustering class
+2022-04-26/17:46:14		The optimum number of clusters is: 3 . Exited the elbow_plot method of the KMeansClustering class
+2022-04-26/17:46:14		Entered the create_clusters method of the KMeansClustering class
+2022-04-26/17:46:15		Entered the save_model method of the File_Operation class
+2022-04-26/17:46:15		Model File KMeans saved. Exited the save_model method of the Model_Finder class
+2022-04-26/17:46:18		Exception occured in create_clusters method of the KMeansClustering class. Exception message:  WebserviceException:
+	Message: Error, provided model path "./KMeans.sav" cannot be found
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "Error, provided model path \"./KMeans.sav\" cannot be found"
+    }
+}
+2022-04-26/17:46:18		Fitting the data to clusters failed. Exited the create_clusters method of the KMeansClustering class
+2022-04-26/17:46:18		Unsuccessful End of Training
+2022-04-26/18:32:45		Start of Training
+2022-04-26/18:32:45		Entered the get_data method of the Data_Getter class
+2022-04-26/18:33:32		Data Load Successful.Exited the get_data method of the Data_Getter class
+2022-04-26/18:33:32		Entered the remove_columns method of the Preprocessor class
+2022-04-26/18:33:32		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2022-04-26/18:33:32		Entered the separate_label_feature method of the Preprocessor class
+2022-04-26/18:33:32		Label Separation Successful. Exited the separate_label_feature method of the Preprocessor class
+2022-04-26/18:33:32		Entered the is_null_present method of the Preprocessor class
+2022-04-26/18:33:32		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2022-04-26/18:33:32		Entered the impute_missing_values method of the Preprocessor class
+2022-04-26/18:33:54		Imputing missing values Successful. Exited the impute_missing_values method of the Preprocessor class
+2022-04-26/18:33:54		Entered the get_columns_with_zero_std_deviation method of the Preprocessor class
+2022-04-26/18:33:56		Column search for Standard Deviation of Zero Successful. Exited the get_columns_with_zero_std_deviation method of the Preprocessor class
+2022-04-26/18:33:56		Entered the remove_columns method of the Preprocessor class
+2022-04-26/18:33:56		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2022-04-26/18:33:56		Entered the elbow_plot method of the KMeansClustering class
+2022-04-26/18:34:11		The optimum number of clusters is: 3 . Exited the elbow_plot method of the KMeansClustering class
+2022-04-26/18:34:11		Entered the create_clusters method of the KMeansClustering class
+2022-04-26/18:34:13		Entered the save_model method of the File_Operation class
+2022-04-26/18:34:13		Model File KMeans saved. Exited the save_model method of the Model_Finder class
+2022-04-26/18:34:30		succesfully created 3clusters. Exited the create_clusters method of the KMeansClustering class
+2022-04-26/18:34:30		Entered the get_best_model method of the Model_Finder class
+2022-04-26/18:34:30		Entered the get_best_params_for_xgboost method of the Model_Finder class
+2022-04-26/19:03:21		XGBoost best params: {'learning_rate': 0.5, 'max_depth': 3, 'n_estimators': 50}. Exited the get_best_params_for_xgboost method of the Model_Finder class
+2022-04-26/19:03:21		AUC for XGBoost:0.9285714285714286
+2022-04-26/19:03:21		Entered the get_best_params_for_random_forest method of the Model_Finder class
+2022-04-26/19:04:10		Random Forest best params: {'criterion': 'gini', 'max_depth': 3, 'max_features': 'auto', 'n_estimators': 10}. Exited the get_best_params_for_random_forest method of the Model_Finder class
+2022-04-26/19:04:10		AUC for RF:0.5
+2022-04-26/19:04:10		Entered the save_model method of the File_Operation class
+2022-04-26/19:04:11		Model File XGBoost0 saved. Exited the save_model method of the Model_Finder class
+2022-04-26/19:04:15		Unsuccessful End of Training

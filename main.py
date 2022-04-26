@@ -10,4 +10,5 @@ if __name__ == "__main__":
         trainModelObj = trainModel()  # object initialization
         trainModelObj.trainingModel()  # training the model for the files in the table
     except Exception as e:
-        print("Error occured: " + str(e))
+        ##print("Error occured: " + str(e))
+        raise e

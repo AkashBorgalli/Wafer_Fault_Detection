@@ -1,6 +1,6 @@
 import pandas as pd
 from azureml.core import Workspace, Dataset, Run
-from base_config import config
+from base_config.config import Config
 
 class Data_Getter:
     """
@@ -12,7 +12,7 @@ class Data_Getter:
 
     """
     def __init__(self, file_object, logger_object):
-        self.fetch_data=config() 
+        self.fetch_data=Config() 
         self.file_object=file_object
         self.logger_object=logger_object
 

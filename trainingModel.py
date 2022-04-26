@@ -95,8 +95,8 @@ class trainModel:
                 file_op = file_methods.File_Operation(self.file_object,self.log_writer)
                 save_model=file_op.save_model(best_model,best_model_name+str(i))
                 self.register_model = Model.register(workspace=Workspace.from_config(), 
-                                      model_path = './{best_model}.sav'.format(best_model=best_model_name+str(i)),
-                                      model_name = best_model_name,
+                                      model_path = 'models/{best_model}/{best_model}.sav'.format(best_model=best_model_name+str(i)),
+                                      model_name = best_model_name+" for "+str(i)+' cluster',
                                       tags={'Training context':'Modular'},
                                       properties={'Model type':'Supervised','Model family':'Classification'})
 
