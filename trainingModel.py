@@ -17,6 +17,7 @@ from best_model_finder import tuner
 from file_operations import file_methods
 from application_logging import logger
 from azureml.core import Run, Model, Workspace
+import scriptrun
 
 #Creating the common Logging object
 class trainModel:
@@ -30,11 +31,11 @@ class trainModel:
         self.log_writer.log(self.file_object, 'Start of Training')
         try:
             # Getting the data from the source
-            run = Run.get_context()
+            run = scriptrun.Runobject()
             data_getter=data_loader.Data_Getter(self.file_object,self.log_writer)
             data=data_getter.get_data()
             row_count = (len(data))
-            run.log('total_rows', row_count)
+            run.get_run_object().log('total_rows', row_count)
 
             """doing the data preprocessing"""
 
@@ -64,7 +65,7 @@ class trainModel:
 
             kmeans=clustering.KMeansClustering(self.file_object,self.log_writer) # object initialization.
             number_of_clusters=kmeans.elbow_plot(X)  #  using the elbow plot to find the number of optimum clusters
-            run.log('Number of clusters', number_of_clusters)
+            run.get_run_object().log('Number of clusters', number_of_clusters)
             # Divide the data into clusters
             X=kmeans.create_clusters(X,number_of_clusters)
 
@@ -94,16 +95,16 @@ class trainModel:
                 #saving the best model to the directory.
                 file_op = file_methods.File_Operation(self.file_object,self.log_writer)
                 save_model=file_op.save_model(best_model,best_model_name+str(i))
-                self.register_model = Model.register(workspace=Workspace.from_config(), 
+                self.register_model = run.get_run_object().register_model(model_name = best_model_name+" for "+str(i)+' cluster', 
                                       model_path = 'models/{best_model}/{best_model}.sav'.format(best_model=best_model_name+str(i)),
-                                      model_name = best_model_name+" for "+str(i)+' cluster',
                                       tags={'Training context':'Modular'},
                                       properties={'Model type':'Supervised','Model family':'Classification'})
 
             # logging the successful Training
             self.log_writer.log(self.file_object, 'Successful End of Training')
             self.file_object.close()
-            run.complete()
+            run.get_run_object().upload_folder(name='Training_Logs',path='Training_logs/')
+            run.get_run_object().complete()
         except Exception:
             # logging the unsuccessful Training
             self.log_writer.log(self.file_object, 'Unsuccessful End of Training')
