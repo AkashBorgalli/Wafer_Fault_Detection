@@ -79,7 +79,8 @@ class KMeansClustering:
 
             self.file_op = file_methods.File_Operation(self.file_object,self.logger_object)
             self.save_model = self.file_op.save_model(self.kmeans, 'KMeans') # saving the KMeans model to directory
-            self.register_model = self.run.get_run_object().register_model(model_name='Kmeans',
+            self.register_model = Model.register(workspace=Workspace.from_config(),
+                                  model_name='Kmeans',
                                   model_path = 'D:/Wafer Azure ML Studio/Wafer_Fault_Detection/models/KMeans/KMeans.sav',
                                   tags={'Training context':'Modular'},
                                   properties={'Model type':'Unsupervised','Model family':'Clustering'})                                                                        # passing 'Model' as the functions need three parameters

@@ -95,7 +95,7 @@ class trainModel:
                 #saving the best model to the directory.
                 file_op = file_methods.File_Operation(self.file_object,self.log_writer)
                 save_model=file_op.save_model(best_model,best_model_name+str(i))
-                self.register_model = run.get_run_object().register_model(model_name = best_model_name+" for "+str(i)+' cluster', 
+                self.register_model = Model.register(workspace=Workspace.from_config(),model_name = best_model_name+str(i),  
                                       model_path = 'models/{best_model}/{best_model}.sav'.format(best_model=best_model_name+str(i)),
                                       tags={'Training context':'Modular'},
                                       properties={'Model type':'Supervised','Model family':'Classification'})
@@ -103,7 +103,7 @@ class trainModel:
             # logging the successful Training
             self.log_writer.log(self.file_object, 'Successful End of Training')
             self.file_object.close()
-            run.get_run_object().upload_folder(name='Training_Logs',path='Training_logs/')
+            run.get_run_object().upload_folder(name='Training_Logs',path='./Training_Logs/')
             run.get_run_object().complete()
         except Exception:
             # logging the unsuccessful Training
