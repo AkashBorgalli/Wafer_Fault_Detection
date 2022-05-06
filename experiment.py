@@ -7,7 +7,8 @@ from trainingModel import trainModel
 env = Environment.from_conda_specification("experiment_env", "./environment.yml")
 script_config = ScriptRunConfig(source_directory='./scripts',
                                 script='main.py',
-                                environment=env                              
+                                environment=env ,
+                                docker_runtime_config=DockerConfiguration(use_docker=True)                             
                                 )
 
 if __name__ == "__main__":
