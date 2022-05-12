@@ -4,11 +4,13 @@ from azureml.widgets import RunDetails
 from azureml.core.runconfig import DockerConfiguration
 from trainingModel import trainModel
 # Create a script config
-env = Environment.from_conda_specification("experiment_env", "./environment.yml")
+myenv = Environment.from_conda_specification(name = "wafer-env",
+                                             file_path = "environment.yml")
+
 script_config = ScriptRunConfig(source_directory='./scripts',
                                 script='main.py',
-                                environment=env ,
-                                docker_runtime_config=DockerConfiguration(use_docker=True)                             
+                                environment=myenv 
+                                                             
                                 )
 
 if __name__ == "__main__":
